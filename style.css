@@ -1,0 +1,121 @@
+:root {
+  --header-height: 60px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #222;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  text-align: center;
+}
+
+#game-board {
+  display: grid;
+  gap: 10px;
+}
+
+#game-board button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0.1rem 0.1rem 2rem greenyellow;
+  transition: transform 0.3s ease;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  font-size: 4vw;
+}
+
+button:not(.matched):hover {
+  transform: scale(1.4);
+}
+
+.score-board {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  #game-board {
+    grid-template-columns: repeat(4, 3fr);
+    padding: 10%;
+    grid-gap: 10px;
+  }
+
+  #game-board button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    background-color: #222;
+    width: 95%;
+    height: 95%;
+    padding: 10%;
+    box-shadow: 0.1rem 0.1rem 1rem greenyellow;
+    transition: transform 0.3s ease;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    font-size: 4vw;
+  }
+}
+
+@media (min-width: 768px) {
+  #game-board {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  #game-board button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    background-color: #222;
+    width: 95%;
+    height: 95%;
+    padding: 40%;
+    box-shadow: 0.1rem 0.1rem 1rem greenyellow;
+    transition: transform 0.3s ease;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    font-size: 1.8vw;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: red;
+    text-shadow: 0.2rem 0.2rem 2rem red;
+    padding-bottom: 1em;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
